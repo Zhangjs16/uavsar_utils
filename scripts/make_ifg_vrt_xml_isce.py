@@ -2,7 +2,7 @@
 
 ############################################################
 # Script to generate UAVSAR ifgs xmls and vrts using isce. #
-# Author: Talib Oliver, 2021                               #
+# Author: Talib Oliver, 2021 (Caltech/JPL)                 #
 ############################################################
 
 import os
