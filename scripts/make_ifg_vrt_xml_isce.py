@@ -8,7 +8,6 @@
 import os
 import glob
 import argparse
-import json
 import isce
 import isceobj
 from isceobj.Util.decorators import use_api
