@@ -10,8 +10,7 @@ import glob
 import argparse
 import isce
 import isceobj
-# from isceobj.Util.decorators import use_api
-# from iscesys.ImageUtil.ImageUtil import ImageUtil as IU
+
 
 def createParser():
     '''
