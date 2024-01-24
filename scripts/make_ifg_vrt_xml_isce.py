@@ -83,19 +83,18 @@ def main(iargs=None):
     inps = cmdLineParse(iargs)  
     ifgs = glob.glob(inps.ifgdir+'/*')
     print("Input files:", ifgs)
-    for ifg_file in ifgs:
-        img = os.path.basename(ifg_file)
-        ftype = img.split('.')[1]
-        if ftype == 'int': 
+    for img in ifgs:
+        if img.endswith('.int'): 
             run_ifg(img, inps.samples)
-        elif ftype == 'amp':
+        elif img.endswith('.amp'):
             run_amp(img, inps.samples)
-        elif ftype == 'cor':
+        elif img.endswith('.cor'):
             run_cor(img, inps.samples)
-        elif ftype == 'unw':
+        elif img.endswith('.unw'):
             run_unw(img, inps.samples)
-        elif ftype == 'conncomp':
+        elif img.endswith('.conncomp'):
             run_cc(img, inps.samples)
+
     print('Finished vrts and xmls')
 
 if __name__ == '__main__':
