@@ -10,8 +10,8 @@ import glob
 import argparse
 import isce
 import isceobj
-from isceobj.Util.decorators import use_api
-from iscesys.ImageUtil.ImageUtil import ImageUtil as IU
+# from isceobj.Util.decorators import use_api
+# from iscesys.ImageUtil.ImageUtil import ImageUtil as IU
 
 def createParser():
     '''
@@ -83,7 +83,9 @@ def main(iargs=None):
 
     inps = cmdLineParse(iargs)  
     ifgs = glob.glob(inps.ifgdir+'/*')
-    for img in ifgs:
+    print("Input files:", ifgs)
+    for ifg_file in ifgs:
+        img = os.path.basename(ifg_file)
         ftype = img.split('.')[1]
         if ftype == 'int': 
             run_ifg(img, inps.samples)
@@ -95,7 +97,7 @@ def main(iargs=None):
             run_unw(img, inps.samples)
         elif ftype == 'conncomp':
             run_cc(img, inps.samples)
-    print('This is the end')
+    print('Finished vrts and xmls')
 
 if __name__ == '__main__':
 
